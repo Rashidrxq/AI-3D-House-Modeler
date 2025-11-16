@@ -1,13 +1,13 @@
 import React, { Suspense, useMemo } from 'react';
 import { Canvas } from '@react-three/fiber';
-// FIX: Import `ThreeElements` type to augment JSX. This resolves TypeScript errors for R3F components.
+// FIX: Import `ThreeElements` to make TypeScript aware of the custom elements provided by react-three-fiber.
 import type { ThreeElements } from '@react-three/fiber';
 import { OrbitControls, Stage, useTexture } from '@react-three/drei';
 import * as THREE from 'three';
 import { Shape, Light, ModelObject } from '../types';
 
-// FIX: Extend the global JSX namespace to include react-three-fiber's elements.
-// This resolves TypeScript errors like "Property 'mesh' does not exist on type 'JSX.IntrinsicElements'".
+// FIX: Extend the global JSX namespace with `ThreeElements`. This resolves TypeScript errors
+// for react-three-fiber components (e.g., "Property 'mesh' does not exist on type 'JSX.IntrinsicElements'").
 declare global {
   namespace JSX {
     interface IntrinsicElements extends ThreeElements {}
