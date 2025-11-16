@@ -1,0 +1,5 @@
+{
+  "name": "AI 3D House Modeler",
+  "description": "Describe a house and watch as AI generates a 3D model for you to explore. Uses the Gemini API to interpret your text and renders the model in your browser using React Three Fiber.",
+  "requestFramePermissions": []
+}
